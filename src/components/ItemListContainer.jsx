@@ -3,7 +3,7 @@ import Cards from "./Item";
 import ProductosJSON from "./data/products.json";
 import Flex from "./Styles/Flex";
 
-function ItemsMap(props) {
+function ItemListContainer(props) {
   const [productos, setProductos] = useState([]);
   const [cargando, setCargando] = useState(true);
 
@@ -11,7 +11,7 @@ function ItemsMap(props) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(ProductosJSON);
-      }, 3000);
+      }, 2000);
     });
   };
 
@@ -24,7 +24,7 @@ function ItemsMap(props) {
 
   if (cargando) {
     return (
-      <p style={{ margin: "20%", paddingInline: "30%", fontSize: "5vmin" }}>
+      <p style={{ margin: "10%", paddingInline: "20%", fontSize: "5vmin" }}>
         Cargando datos...
       </p>
     );
@@ -48,17 +48,4 @@ function ItemsMap(props) {
   );
 }
 
-export default ItemsMap;
-
-//import ItemsMap from "./ItemsMap";
-//import Flex from "./Styles/Flex";
-//
-//function ItemListContainer() {
-//  return (
-//    <Flex>
-//      <ItemsMap />
-//    </Flex>
-//  );
-//}
-//
-//export default ItemListContainer;
+export default ItemListContainer;

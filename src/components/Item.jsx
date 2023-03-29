@@ -6,11 +6,15 @@ import { CardActionArea, CardActions } from "@mui/material";
 import Flex from "./Styles/Flex";
 import Button from "./Button/Button"
 
-function MultiActionAreaCard(props) {
+function Item(props) {
   return (
     <Flex>
       <Card sx={{ maxWidth: 345 }} style={{ margin: "5", padding: "3" }}>
         <CardActionArea>
+        <Typography gutterBottom variant="h4" component="div">
+            {props.tipo}
+          </Typography>
+
           <CardMedia
             component="img"
             image={props.foto}
@@ -19,11 +23,9 @@ function MultiActionAreaCard(props) {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {props.tipo}
-              <br />
               {props.marca}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="h5" color="text.secondary">
               ${props.precio}
             </Typography>
           </CardContent>
@@ -38,4 +40,4 @@ function MultiActionAreaCard(props) {
   );
 }
 
-export default MultiActionAreaCard;
+export default Item;

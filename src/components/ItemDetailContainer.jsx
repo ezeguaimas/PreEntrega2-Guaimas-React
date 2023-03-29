@@ -4,30 +4,34 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions } from "@mui/material";
 import Flex from "./Styles/Flex";
-import Button from "./Button/Button"
+import Button from "./Button/Button";
 
 function ItemDetailContainer(props) {
   return (
     <Flex>
       <Card sx={{ maxWidth: 345 }} style={{ margin: "5", padding: "3" }}>
         <CardActionArea>
+
           <CardMedia
             component="img"
             height="140"
             image={props.foto}
             alt="foto producto"
           />
+
           <CardContent>
+          <Typography gutterBottom variant="h4" component="div">
+            {props.tipo}
+          </Typography>
+
             <Typography gutterBottom variant="h5" component="div">
-              {props.tipo}
-              <br />
               {props.marca}
               <br />
               {props.subTipo}
               <br />
               {props.contenido}Ml
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="h3" color="text.secondary">
               ${props.precio}
             </Typography>
           </CardContent>

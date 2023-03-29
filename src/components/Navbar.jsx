@@ -22,16 +22,18 @@ function Navbar() {
     >
       <div style={{ display: "flex", alignItems: "center" }}>
         <div>
-          <img
-            src={mandingaLogo}
-            style={{
-              height: "150px",
-              width: "150px",
-              paddingInline: "3vh",
-              marginInline: "2vh",
-            }}
-            alt="Mandinga Drinks"
-          />
+          <Link to="/">
+            <img
+              src={mandingaLogo}
+              style={{
+                height: "150px",
+                width: "150px",
+                paddingInline: "3vh",
+                marginInline: "2vh",
+              }}
+              alt="Mandinga Drinks"
+            />
+          </Link>
         </div>
 
         <ul
@@ -48,28 +50,28 @@ function Navbar() {
             </Link>
           </li>
           <li style={{ margin: "2vh" }}>
-            <Link style={styleNavList} to="#">
+            <Link style={styleNavList} to="/category/cerveza">
               Cervezas
             </Link>
           </li>
           <li style={{ margin: "2vh" }}>
-            <Link style={styleNavList} to="#">
+            <Link style={styleNavList} to="/category/vino">
               Vinos
             </Link>
           </li>
 
           <li style={{ margin: "2vh" }}>
-            <Link style={styleNavList} to="#">
+            <Link style={styleNavList} to="/category/whisky">
               Whisky
             </Link>
           </li>
           <li style={{ margin: "2vh" }}>
-            <Link style={styleNavList} to="#">
+            <Link style={styleNavList} to="/category/destilado">
               Destilados
             </Link>
           </li>
           <li style={{ margin: "2vh" }}>
-            <Link style={styleNavList} to="#">
+            <Link style={styleNavList} to="/category/aperitivo">
               Aperitivos
             </Link>
           </li>

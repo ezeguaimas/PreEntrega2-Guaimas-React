@@ -1,8 +1,7 @@
 import "./button.css";
 
 const Button = (props) => {
-  function handleClick() {
-  }
+  function handleClick() {}
 
   const styleButton = {
     backgroundColor: props.color,

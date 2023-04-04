@@ -1,6 +1,5 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions } from "@mui/material";
 import Flex from "./Styles/Flex";
@@ -10,7 +9,10 @@ import { Link } from "react-router-dom";
 function Item(props) {
   return (
     <Flex>
-      <Card sx={{ maxWidth: 345 }} style={{ margin: "5", padding: "3" }}>
+      <Card
+        sx={{ maxMinWidth: 345, minWidth: 345 }}
+        style={{ margin: "5", padding: "3" }}
+      >
         <CardActionArea>
           <Typography
             gutterBottom
@@ -21,12 +23,14 @@ function Item(props) {
             {props.tipo}
           </Typography>
 
-          <CardMedia
-            component="img"
-            image={props.foto}
-            alt="foto producto"
-            style={{ height: "200px", width: "140px", objectFit: "cover" }}
-          />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <img
+              src={props.foto}
+              alt="foto producto"
+              style={{ maxWidth: "250px", maxHeight: "250px" }}
+            />
+          </div>
+
           <CardContent>
             <Typography
               gutterBottom
@@ -45,11 +49,9 @@ function Item(props) {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
+        <CardActions style={{ display: "flex", justifyContent: "center" }}>
           <Link to={`/product/${props.id}`}>
-            <Button size="small" color="primary">
-              Ver detalle
-            </Button>
+            <Button>Ver detalle</Button>
           </Link>
         </CardActions>
       </Card>
